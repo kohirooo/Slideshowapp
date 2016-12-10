@@ -12,6 +12,12 @@
 		F92513BB1DF71F9E006D88FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92513B91DF71F9E006D88FF /* Main.storyboard */; };
 		F92513BD1DF71F9E006D88FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F92513BC1DF71F9E006D88FF /* Assets.xcassets */; };
 		F92513C01DF71F9E006D88FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92513BE1DF71F9E006D88FF /* LaunchScreen.storyboard */; };
+		F92513CD1DF71FCD006D88FF /* flower1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = F92513C81DF71FCD006D88FF /* flower1.JPG */; };
+		F92513CE1DF71FCD006D88FF /* flower2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = F92513C91DF71FCD006D88FF /* flower2.JPG */; };
+		F92513CF1DF71FCD006D88FF /* flower3.JPG in Resources */ = {isa = PBXBuildFile; fileRef = F92513CA1DF71FCD006D88FF /* flower3.JPG */; };
+		F92513D01DF71FCD006D88FF /* flower4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F92513CB1DF71FCD006D88FF /* flower4.jpg */; };
+		F92513D11DF71FCD006D88FF /* flower5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F92513CC1DF71FCD006D88FF /* flower5.jpg */; };
+		F92513D31DF72380006D88FF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92513D21DF72380006D88FF /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		F92513BC1DF71F9E006D88FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F92513BF1DF71F9E006D88FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F92513C11DF71F9E006D88FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F92513C81DF71FCD006D88FF /* flower1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower1.JPG; sourceTree = "<group>"; };
+		F92513C91DF71FCD006D88FF /* flower2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower2.JPG; sourceTree = "<group>"; };
+		F92513CA1DF71FCD006D88FF /* flower3.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower3.JPG; sourceTree = "<group>"; };
+		F92513CB1DF71FCD006D88FF /* flower4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower4.jpg; sourceTree = "<group>"; };
+		F92513CC1DF71FCD006D88FF /* flower5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower5.jpg; sourceTree = "<group>"; };
+		F92513D21DF72380006D88FF /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +69,25 @@
 				F92513B51DF71F9E006D88FF /* AppDelegate.swift */,
 				F92513B71DF71F9E006D88FF /* ViewController.swift */,
 				F92513B91DF71F9E006D88FF /* Main.storyboard */,
+				F92513D21DF72380006D88FF /* SecondViewController.swift */,
 				F92513BC1DF71F9E006D88FF /* Assets.xcassets */,
 				F92513BE1DF71F9E006D88FF /* LaunchScreen.storyboard */,
 				F92513C11DF71F9E006D88FF /* Info.plist */,
+				F92513C71DF71FCD006D88FF /* img */,
 			);
 			path = SlideshowApp2;
+			sourceTree = "<group>";
+		};
+		F92513C71DF71FCD006D88FF /* img */ = {
+			isa = PBXGroup;
+			children = (
+				F92513C81DF71FCD006D88FF /* flower1.JPG */,
+				F92513C91DF71FCD006D88FF /* flower2.JPG */,
+				F92513CA1DF71FCD006D88FF /* flower3.JPG */,
+				F92513CB1DF71FCD006D88FF /* flower4.jpg */,
+				F92513CC1DF71FCD006D88FF /* flower5.jpg */,
+			);
+			path = img;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,9 +149,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F92513CF1DF71FCD006D88FF /* flower3.JPG in Resources */,
+				F92513D01DF71FCD006D88FF /* flower4.jpg in Resources */,
 				F92513C01DF71F9E006D88FF /* LaunchScreen.storyboard in Resources */,
 				F92513BD1DF71F9E006D88FF /* Assets.xcassets in Resources */,
+				F92513CD1DF71FCD006D88FF /* flower1.JPG in Resources */,
 				F92513BB1DF71F9E006D88FF /* Main.storyboard in Resources */,
+				F92513D11DF71FCD006D88FF /* flower5.jpg in Resources */,
+				F92513CE1DF71FCD006D88FF /* flower2.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F92513D31DF72380006D88FF /* SecondViewController.swift in Sources */,
 				F92513B81DF71F9E006D88FF /* ViewController.swift in Sources */,
 				F92513B61DF71F9E006D88FF /* AppDelegate.swift in Sources */,
 			);
