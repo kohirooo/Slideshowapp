@@ -9,19 +9,24 @@
 
 //タップイベント作って画面遷移　窓クローズで　画像そろえ
 
-//http://zutto-megane.com/objective-c/post-300/
 
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var ImageUIImageView: UIImageView!
 
     //画像配列
-    let photos = ["flower1.jpg","flower2.jpg","flower3.jpg","flower4.jpg","flower5.jpg"]
+    let photos = [
+        "flower1.jpg",
+        "flower2.jpg",
+        "flower3.jpg",
+        "flower4.jpg",
+        "flower5.jpg"]
     
-    @IBOutlet weak var ImageUIImageView: UIImageView!
     
     var No: Int = 0
-    
     var timer: Timer? = nil
     
     @IBAction func NextUIButton(_ sender: UIButton) {
@@ -34,10 +39,6 @@ class ViewController: UIViewController {
         }
         let myPhoto2:String = photos[No]
         ImageUIImageView.image = UIImage(named: myPhoto2)
-        self.view.addSubview(ImageUIImageView)
-
-
-        
     }
     
     @IBAction func BackUIButton(_ sender: UIButton) {
@@ -49,34 +50,56 @@ class ViewController: UIViewController {
         }
         let myPhoto2:String = photos[No]
         ImageUIImageView.image = UIImage(named: myPhoto2)
-        self.view.addSubview(ImageUIImageView)
-
     }
     
     @IBAction func ShowUIButton(_ sender: UIButton) {
         if timer == nil {
             //timerを生成する.
-            timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.NextUIButton(_:)), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(
+                timeInterval: 2.0,
+                target: self,
+                selector: #selector(self.NextUIButton(_:)),
+                userInfo: nil, repeats: true
+            )
             //ボタンのタイトル変更.
             sender.setTitle("Stop", for: UIControlState.normal)
             timer?.fire()
+            backButton.isEnabled = false
+            nextButton.isEnabled = false
+
         }else{
             timer?.invalidate()//停止
             timer = nil
             sender.setTitle("Start", for: UIControlState.normal)
+            backButton.isEnabled = true
+            nextButton.isEnabled = true
         }
         
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
         let myPhoto:String = photos[No]//画像ファイル名を変数に格納
         ImageUIImageView.image = UIImage(named: myPhoto)//UIImageに変換？？？
         self.view.addSubview(ImageUIImageView)//画像を表示
 
     }
-
+    /**
+     * タップイベント
+     */
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if ((event?.touches(for: ImageUIImageView)) != nil) {
+            self.performSegue(withIdentifier: "segueSecound", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let s = segue.destination as! SecondViewController
+        let imageName = photos[No]
+        s.image = UIImage(named: imageName)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
