@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     
     @IBAction func NextUIButton(_ sender: UIButton) {
         
+        //次へのボタン
         //配列と同じ数のときはリセット、それ以外は＋１
         if No == photos.count - 1 {
             No = 0
@@ -42,6 +43,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func BackUIButton(_ sender: UIButton) {
+        //前へのボタン
         //配列と同じ数のときはリセット、それ以外は-１
         if No == photos.count - 1 {
             No = 0
@@ -53,6 +55,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func ShowUIButton(_ sender: UIButton) {
+        //再生・停止ボタン
         if timer == nil {
             //timerを生成する.
             timer = Timer.scheduledTimer(
@@ -70,6 +73,7 @@ class ViewController: UIViewController {
         }else{
             timer?.invalidate()//停止
             timer = nil
+            //スタートボタンが押されたら次へ前へのボタンをオフに
             sender.setTitle("Start", for: UIControlState.normal)
             backButton.isEnabled = true
             nextButton.isEnabled = true
@@ -81,7 +85,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let myPhoto:String = photos[No]//画像ファイル名を変数に格納
-        ImageUIImageView.image = UIImage(named: myPhoto)//UIImageに変換？？？
+        ImageUIImageView.image = UIImage(named: myPhoto)//UIImageに変換？
         self.view.addSubview(ImageUIImageView)//画像を表示
 
     }
