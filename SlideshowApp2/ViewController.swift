@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var ImageUIImageView: UIImageView!
 
+    @IBOutlet weak var SlideshowUIButton: UIButton!
     //画像配列
     let photos = [
         "flower1.jpg",
@@ -81,8 +82,10 @@ class ViewController: UIViewController {
         
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         let myPhoto:String = photos[No]//画像ファイル名を変数に格納
         ImageUIImageView.image = UIImage(named: myPhoto)//UIImageに変換？
@@ -94,6 +97,14 @@ class ViewController: UIViewController {
      */
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if ((event?.touches(for: ImageUIImageView)) != nil) {
+            
+            
+            timer?.invalidate()//停止
+            //スタートボタンが押されたら次へ前へのボタンをオフに
+            backButton.isEnabled = true
+            nextButton.isEnabled = true
+            SlideshowUIButton.setTitle("Start", for: UIControlState.normal)
+            
             self.performSegue(withIdentifier: "segueSecound", sender: self)
         }
     }
