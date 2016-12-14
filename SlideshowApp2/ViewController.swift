@@ -45,12 +45,13 @@ class ViewController: UIViewController {
     
     @IBAction func BackUIButton(_ sender: UIButton) {
         //前へのボタン
-        //配列と同じ数のときはリセット、それ以外は-１
-        if No == photos.count - 1 {
-            No = 0
+        //配列と同じ数のときはリセット、それ以外は+１
+        if No == 0 {
+            No = photos.count - 1
         }else{
-            No += 1
+            No -= 1
         }
+        
         let myPhoto2:String = photos[No]
         ImageUIImageView.image = UIImage(named: myPhoto2)
     }
